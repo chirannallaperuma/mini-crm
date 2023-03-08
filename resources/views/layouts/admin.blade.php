@@ -83,14 +83,14 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href=""
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </div>
@@ -126,49 +126,25 @@
                         </a>
                     </li>
 
-{{--                    <li class="nav-item has-treeview">--}}
-{{--                        <a href="" class="nav-link">--}}
-{{--                            <i class="nav-icon fas fa-map-marked-alt"></i>--}}
-{{--                            <p>--}}
-{{--                                Location--}}
-{{--                                <i class="right fas fa-angle-left"></i>--}}
-{{--                            </p>--}}
-{{--                        </a>--}}
-{{--                        <ul class="nav nav-treeview">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="/location/new-location" class="nav-link">--}}
-{{--                                    <i class="fa fa-plus-circle nav-icon"></i>--}}
-{{--                                    <p>New Location</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="/location/location-list" class="nav-link">--}}
-{{--                                    <i class="fa fa-list nav-icon"></i>--}}
-{{--                                    <p>Location List</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-users-cog"></i>
+                            <i class="nav-icon fas fa-building"></i>
                             <p>
-                                Users
+                                Companies
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/user/new-user" class="nav-link">
-                                    <i class="fa fa-plus-circle nav-icon"></i>
-                                    <p>New User</p>
+                                    <i class="fa f4444444444444444444444a-plus-circle nav-icon"></i>
+                                    <p>New Company</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/user/user-list" class="nav-link">
                                     <i class="fa fa-list nav-icon"></i>
-                                    <p>User List</p>
+                                    <p>Company List</p>
                                 </a>
                             </li>
                         </ul>
@@ -176,9 +152,9 @@
 
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-truck-moving"></i>
+                            <i class="nav-icon fas fa-users-cog"></i>
                             <p>
-                                Suppliers
+                                Employees
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -186,169 +162,16 @@
                             <li class="nav-item">
                                 <a href="/supplier/new-supplier" class="nav-link">
                                     <i class="fa fa-plus-circle nav-icon"></i>
-                                    <p>New Supplier</p>
+                                    <p>New Employee</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/supplier/supplier-list" class="nav-link">
                                     <i class="fa fa-list nav-icon"></i>
-                                    <p>Supplier List</p>
+                                    <p>Employee List</p>
                                 </a>
                             </li>
                         </ul>
-                    </li>
-
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tools"></i>
-                            <p>
-                                Products
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/product/new-product" class="nav-link">
-                                    <i class="fa fa-plus-circle nav-icon"></i>
-                                    <p>New Product</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/product/product-list" class="nav-link">
-                                    <i class="fa fa-list nav-icon"></i>
-                                    <p>Product List</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-{{--                    <li class="nav-item has-treeview">--}}
-{{--                        <a href="#" class="nav-link">--}}
-{{--                            <i class="nav-icon fas fa-credit-card"></i>--}}
-{{--                            <p>--}}
-{{--                                Purchase Order--}}
-{{--                                <i class="right fas fa-angle-left"></i>--}}
-{{--                            </p>--}}
-{{--                        </a>--}}
-{{--                        <ul class="nav nav-treeview">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="/po/new-po" class="nav-link">--}}
-{{--                                    <i class="fa fa-plus-circle nav-icon"></i>--}}
-{{--                                    <p>New Purchase Order</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="/po/po-list" class="nav-link">--}}
-{{--                                    <i class="fa fa-list nav-icon"></i>--}}
-{{--                                    <p>Purchase Order List</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-shopping-cart"></i>
-                            <p>
-                                Purchasing
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/purchase/new-purchase" class="nav-link">
-                                    <i class="fa fa-plus-circle nav-icon"></i>
-                                    <p>New Purchase</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/purchase/purchase-list" class="nav-link">
-                                    <i class="fa fa-list nav-icon"></i>
-                                    <p>Purchasing List</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-arrow-circle-down"></i>
-                            <p>
-                                Good Receive Note
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/grn/new-grn" class="nav-link">
-                                    <i class="fa fa-plus-circle nav-icon"></i>
-                                    <p>New GRN</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/grn/grn-list" class="nav-link">
-                                    <i class="fa fa-list nav-icon"></i>
-                                    <p>GRN List</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
-                            <p>
-                                Return
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="/return/new-return" class="nav-link">
-                                    <i class="fa fa-plus-circle nav-icon"></i>
-                                    <p>Return</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/return/return-list" class="nav-link">
-                                    <i class="fa fa-list nav-icon"></i>
-                                    <p>Return List</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-{{--                    <li class="nav-item has-treeview">--}}
-{{--                        <a href="#" class="nav-link">--}}
-{{--                            <i class="nav-icon fas fa-arrow-alt-circle-up"></i>--}}
-{{--                            <p>--}}
-{{--                                Good Transfer Note--}}
-{{--                                <i class="right fas fa-angle-left"></i>--}}
-{{--                            </p>--}}
-{{--                        </a>--}}
-{{--                        <ul class="nav nav-treeview">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="pages/charts/chartjs.html" class="nav-link">--}}
-{{--                                    <i class="fa fa-plus-circle nav-icon"></i>--}}
-{{--                                    <p>New GTN</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="pages/charts/flot.html" class="nav-link">--}}
-{{--                                    <i class="fa fa-list nav-icon"></i>--}}
-{{--                                    <p>GTN List</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-
-                    <li class="nav-item">
-                        <a href="/reports/reports" class="nav-link">
-                            <i class="nav-icon fas fa-chart-pie"></i>
-                            <p>
-                                Reports
-                            </p>
-                        </a>
                     </li>
                 </ul>
             </nav>
@@ -362,9 +185,6 @@
     <footer class="main-footer">
         <strong>Copyright &copy; 2020 <a href="#"></a>.</strong>
         All rights reserved.
-{{--        <div class="float-right d-none d-sm-inline-block">--}}
-{{--            <b>Version</b> 3.0.2--}}
-{{--        </div>--}}
     </footer>
 
     <aside class="control-sidebar control-sidebar-dark">
