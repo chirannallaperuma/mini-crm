@@ -26,11 +26,12 @@
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{ session('error') }}
-                        </div>    
+                        </div>
                     @endif
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('companies.store') }}" class="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('companies.store') }}" class="form"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -38,8 +39,8 @@
 
                                 <div class="col-md-6">
                                     <input id="company_name" type="text"
-                                        class="form-control @error('company_name') is-invalid @enderror"
-                                        name="company_name" value="{{ old('company_name') }}">
+                                        class="form-control @error('company_name') is-invalid @enderror" name="company_name"
+                                        value="{{ old('company_name') }}">
 
                                     @error('company_name')
                                         <span class="invalid-feedback" role="alert">
@@ -70,8 +71,8 @@
 
                                 <div class="col-md-6">
                                     <input id="logo" type="file"
-                                        class="form-control @error('logo') is-invalid @enderror"
-                                        name="logo" value="{{ old('logo') }}">
+                                        class="form-control @error('logo') is-invalid @enderror" name="logo"
+                                        value="{{ old('logo') }}">
 
                                     @error('logo')
                                         <span class="invalid-feedback" role="alert">

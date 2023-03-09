@@ -26,11 +26,12 @@
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             {{ session('error') }}
-                        </div>    
+                        </div>
                     @endif
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('companies.update', $company->id) }}" class="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('companies.update', $company->id) }}" class="form"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group row">
@@ -38,8 +39,8 @@
 
                                 <div class="col-md-6">
                                     <input id="company_name" type="text"
-                                        class="form-control @error('company_name') is-invalid @enderror"
-                                        name="company_name" value="{{ $company->name }}">
+                                        class="form-control @error('company_name') is-invalid @enderror" name="company_name"
+                                        value="{{ $company->name }}">
 
                                     @error('company_name')
                                         <span class="invalid-feedback" role="alert">
@@ -70,8 +71,8 @@
 
                                 <div class="col-md-6">
                                     <input id="logo" type="file"
-                                        class="form-control @error('logo') is-invalid @enderror"
-                                        name="logo" value="{{ isset($company->logo) ? $company->logo : null }}">
+                                        class="form-control @error('logo') is-invalid @enderror" name="logo"
+                                        value="{{ isset($company->logo) ? $company->logo : null }}">
 
                                     @error('logo')
                                         <span class="invalid-feedback" role="alert">

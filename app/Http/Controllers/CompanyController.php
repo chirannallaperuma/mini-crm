@@ -59,7 +59,6 @@ class CompanyController extends Controller
             $this->companyRepository->create($request->all());
 
             return redirect()->back()->with('success', 'succesfully created');
-
         } catch (Exception $e) {
             return redirect()->back()->with('error;', 'something went wrong');
         }
@@ -102,7 +101,6 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $this->validate($request, [
             'company_name' => 'required',
             'email' => 'email',
@@ -113,7 +111,6 @@ class CompanyController extends Controller
             $this->companyRepository->updateCompany($id, $request->all());
 
             return redirect()->back()->with('success', 'succesfully updated');
-
         } catch (Exception $e) {
             return redirect()->back()->with('error;', 'something went wrong');
         }
@@ -131,7 +128,6 @@ class CompanyController extends Controller
             $this->companyRepository->deleteById($id);
 
             return redirect()->back()->with('success', 'deleted');
-
         } catch (Exception $e) {
             return redirect()->back()->with('error;', 'something went wrong');
         }
