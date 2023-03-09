@@ -23,7 +23,6 @@
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{asset('css/daterangepicker.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/gijgo.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- jQuery -->
@@ -36,23 +35,12 @@
     </script>
     <script src="{{'/js/bootstrap.bundle.min.js'}}"></script>
 
-    <script src="{{'/js/moment.min.js'}}"></script>
     <script src="{{asset('/js/daterangepicker.js')}}"></script>
-    <script src="{{asset('/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
     <script src="{{asset('/js/OverlayScrollbars.min.js')}}"></script>
     <script src="{{asset('/js/adminlte.js')}}"></script>
 
-    <script src="{{asset('/js/demo.js')}}"></script>
-    <script src="{{asset('/js/bootbox.min.js')}}"></script>
-    <script src="{{asset('/js/bootbox.all.min.js')}}"></script>
-    <script src="{{asset('/js/bootbox.locales.min.js')}}"></script>
-    <script src="{{asset('/js/sweetalert2@9.js')}}"></script>
-    <script src="{{asset('/js/sweetalert2.all.min.js')}}"></script>
-    <script src="{{asset('/js/gijgo.min.js')}}"></script>
-    <script src="{{asset('/js/angular.min.js')}}"></script>
     <script src="{{asset('/js/jquery.tabletoCSV.js')}}"></script>
-    <script src="{{asset('/js/date.js')}}"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -136,13 +124,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/user/new-user" class="nav-link">
-                                    <i class="fa f4444444444444444444444a-plus-circle nav-icon"></i>
+                                <a href="{{ route('companies.create') }}" class="nav-link">
+                                    <i class="fa fa-plus-circle nav-icon"></i>
                                     <p>New Company</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/user/user-list" class="nav-link">
+                                <a href="{{ route('companies.index') }}" class="nav-link">
                                     <i class="fa fa-list nav-icon"></i>
                                     <p>Company List</p>
                                 </a>
@@ -160,13 +148,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/supplier/new-supplier" class="nav-link">
+                                <a href="{{ route('employees.create') }}" class="nav-link">
                                     <i class="fa fa-plus-circle nav-icon"></i>
                                     <p>New Employee</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/supplier/supplier-list" class="nav-link">
+                                <a href="{{ route('employees.index') }}" class="nav-link">
                                     <i class="fa fa-list nav-icon"></i>
                                     <p>Employee List</p>
                                 </a>
@@ -183,7 +171,7 @@
 
     </div>
     <footer class="main-footer">
-        <strong>Copyright &copy; 2020 <a href="#"></a>.</strong>
+        <strong>Copyright &copy; 2023 <a href="#"></a>.</strong>
         All rights reserved.
     </footer>
 
