@@ -51,7 +51,6 @@ class BaseEloquentRepository
      */
     public function updateWithId($id, $data)
     {
-
         $model = $this->model->findOrFail($id);
         return $this->update($model, $data);
     }
